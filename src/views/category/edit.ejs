@@ -1,0 +1,36 @@
+<div class="container mt-2 p-4 rounded">
+  <% if(message) { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%- message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <%}%>
+  <%
+    let { id, categoryName } = data;
+  %>
+  <div class="row bg-body-tertiary pt-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/categorys">Category</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="row mt-3 p-4 bg-body-tertiary">
+    <form action="/categorys-edit/<%= id %>" method="post">
+      <div class="mb-3 row">
+        <label for="categoryName" class="col-sm-2 col-form-label">Category Name</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="categoryName" name="categoryName" value="<%- categoryName %>" />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

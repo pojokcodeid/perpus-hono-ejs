@@ -4,6 +4,7 @@ import userRoute from "./routes/userRoutes";
 import { getHome } from "./controllers/homeController";
 import { setFlash } from "./utils/flash";
 import { validateUserLogin } from "./utils/acessValidation";
+import categoryRoute from "./routes/categoryRoutes";
 
 const app = new Hono();
 
@@ -16,5 +17,6 @@ app.get("/set-flash", (c) => {
 });
 app.get("/", validateUserLogin, getHome);
 app.route("/", userRoute);
+app.route("/", categoryRoute);
 
 export default app;

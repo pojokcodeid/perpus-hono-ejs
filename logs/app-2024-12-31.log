@@ -239,3 +239,59 @@ Unique constraint failed on the constraint: `User_email_key`
     ]
   }
 ]
+ [LOGGER] 2024-12-31 01:02:45.211 PM error : controller/categoryController/addCategory: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Category name is required",
+    "path": [
+      "categoryName"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 01:02:50.078 PM error : controller/categoryController/addCategory: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Category name is required",
+    "path": [
+      "categoryName"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 01:03:17.657 PM error : controller/categoryController/addCategory: PrismaClientValidationError: 
+Invalid `prisma.category.create()` invocation in
+C:\Users\Asep\Downloads\peminjamanbuku\src\models\categoryModel.ts:16:32
+
+  13 };
+  14 
+  15 export const createCategory = async (name: string): Promise<Category> => {
+→ 16   return await prisma.category.create({
+         data: {
+       +   categoryName: String
+         }
+       })
+
+Argument `categoryName` is missing.
+ [LOGGER] 2024-12-31 01:06:19.786 PM error : controller/categoryController/addCategory: PrismaClientValidationError: 
+Invalid `prisma.category.create()` invocation in
+C:\Users\Asep\Downloads\peminjamanbuku\src\models\categoryModel.ts:16:32
+
+  13 };
+  14 
+  15 export const createCategory = async (name: string): Promise<Category> => {
+→ 16   return await prisma.category.create({
+         data: {
+       +   categoryName: String
+         }
+       })
+
+Argument `categoryName` is missing.
+ [LOGGER] 2024-12-31 01:36:37.062 PM error : controller/categoryController/openEditCategoryForm: ENOENT: No such file or directory
+ [LOGGER] 2024-12-31 01:37:15.869 PM error : controller/categoryController/openEditCategoryForm: ENOENT: No such file or directory
