@@ -1,0 +1,47 @@
+<div
+  class="border d-flex align-items-center justify-content-center p-2"
+  style="height: 100vh"
+>
+  <div class="card col-lg-3 col-md-6 col-sm-6 bg-body-tertiary border-0">
+    <% if(message) { %>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%- message %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <%}%>
+    <% 
+      let { email, password } = data || {"email": "", "password": ""};
+    %>
+    <div class="card-body">
+      <div class="card-title text-center mb-5">
+        <h1>Login</h1>
+      </div>
+      <form action="/login" method="post">
+        <div class="mb-3 row">
+          <label for="email" class="col-sm-4 col-form-label">Email</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="email" name="email" value="<%- email %>"/>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="password" class="col-sm-4 col-form-label">Password</label>
+          <div class="col-sm-8">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              value="<%- password %>"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-8">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Borrow    Borrow[]
+}
+
+model Category {
+  id           Int      @id @default(autoincrement())
+  categoryName String
+  Book         Book[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Book {
+  id            Int            @id @default(autoincrement())
+  title         String
+  publisher     String
+  yearPublished Int
+  author        String
+  isbn          String
+  qty           Int
+  catoryId      Int
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  category      Category       @relation(fields: [catoryId], references: [id])
+  BorrowDetail  BorrowDetail[]
+  ReturnDetail  ReturnDetail[]
+}
+
+model Borrow {
+  id           Int            @id @default(autoincrement())
+  userId       Int
+  date         DateTime       @default(now())
+  returnDate   DateTime
+  note         String
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  borrowers    User           @relation(fields: [userId], references: [id])
+  BorrowDetail BorrowDetail[]
+  Return       Return[]
+}
+
+model BorrowDetail {
+  id       Int    @id @default(autoincrement())
+  bookId   Int
+  borroeId Int
+  qty      Int
+  book     Book   @relation(fields: [bookId], references: [id])
+  borrow   Borrow @relation(fields: [borroeId], references: [id])
+}
+
+model Return {
+  id           Int            @id @default(autoincrement())
+  borrowId     Int
+  note         String
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  borrow       Borrow         @relation(fields: [borrowId], references: [id])
+  ReturnDetail ReturnDetail[]
+}
+
+model ReturnDetail {
+  id       Int    @id @default(autoincrement())
+  bookId   Int
+  returnId Int
+  qty      Int
+  return   Return @relation(fields: [returnId], references: [id])
+  book     Book   @relation(fields: [bookId], references: [id])
+}
+
+enum Role {
+  USER
+  ADMIN
+}

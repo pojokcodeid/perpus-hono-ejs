@@ -1,0 +1,43 @@
+{
+  "name": "peminjamanbuku",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "prepare": "husky",
+    "fix-lint": "bunx eslint . --fix",
+    "format": "bunx prettier --write .",
+    "check-types": "bunx tsc --noEmit --pretty",
+    "check-lint": "bunx eslint .",
+    "check-format": "bunx prettier . --check",
+    "build": "cp .env ./dist/.env && bun build ./src/index.ts --compile --minify --sourcemap --outfile dist/perpus --env inline",
+    "start": "bun run dist/restapi"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.1.0",
+    "aws-sdk": "^2.1692.0",
+    "bcrypt": "^5.1.1",
+    "ejs": "^3.1.10",
+    "hono": "^4.6.15",
+    "mock-aws-s3": "^4.0.2",
+    "nock": "^13.5.6",
+    "winston": "^3.17.0",
+    "winston-daily-rotate-file": "^5.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/bun": "latest",
+    "@types/ejs": "^3.1.5",
+    "@types/node": "^22.10.2",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.18.2",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.4.2",
+    "prisma": "^6.1.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.2"
+  }
+}

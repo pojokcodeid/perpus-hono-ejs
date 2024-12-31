@@ -1,0 +1,241 @@
+ [LOGGER] 2024-12-31 09:56:34.351 AM error : controller/userController/loginUser: [
+  {
+    "validation": "email",
+    "code": "invalid_string",
+    "message": "Invalid email format",
+    "path": [
+      "email"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password is required",
+    "path": [
+      "password"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:00:10.720 AM error : controller/userController/loginUser: [
+  {
+    "validation": "email",
+    "code": "invalid_string",
+    "message": "Invalid email format",
+    "path": [
+      "email"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password is required",
+    "path": [
+      "password"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:01:46.979 AM error : controller/userController/loginUser: [
+  {
+    "validation": "email",
+    "code": "invalid_string",
+    "message": "Invalid email format",
+    "path": [
+      "email"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password is required",
+    "path": [
+      "password"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:01:53.860 AM error : controller/userController/loginUser: [
+  {
+    "validation": "email",
+    "code": "invalid_string",
+    "message": "Invalid email format",
+    "path": [
+      "email"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password is required",
+    "path": [
+      "password"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:02:30.626 AM error : controller/userController/loginUser: [
+  {
+    "validation": "email",
+    "code": "invalid_string",
+    "message": "Invalid email format",
+    "path": [
+      "email"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password is required",
+    "path": [
+      "password"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:02:56.874 AM error : controller/userController/loginUser: [
+  {
+    "validation": "email",
+    "code": "invalid_string",
+    "message": "Invalid email format",
+    "path": [
+      "email"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password is required",
+    "path": [
+      "password"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:04:36.044 AM error : controller/userController/loginUser: [
+  {
+    "validation": "email",
+    "code": "invalid_string",
+    "message": "Invalid email format",
+    "path": [
+      "email"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password is required",
+    "path": [
+      "password"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:04:52.927 AM error : controller/userController/loginUser: [
+  {
+    "validation": "email",
+    "code": "invalid_string",
+    "message": "Invalid email format",
+    "path": [
+      "email"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password is required",
+    "path": [
+      "password"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:05:15.330 AM error : controller/userController/loginUser: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password is required",
+    "path": [
+      "password"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:06:40.637 AM error : controller/userController/loginUser: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password is required",
+    "path": [
+      "password"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 11:02:04.516 AM error : controller/userController/addUser: PrismaClientKnownRequestError: 
+Invalid `prisma.user.create()` invocation in
+C:\Users\Asep\Downloads\peminjamanbuku\src\models\userModel.ts:36:28
+
+  33   role: Role = "USER"
+  34 ): Promise<User> => {
+  35   const hashedPassword = await bcrypt.hash(password, 10);
+→ 36   return await prisma.user.create(
+Unique constraint failed on the constraint: `User_email_key`
+ [LOGGER] 2024-12-31 11:05:25.137 AM error : controller/userController/addUser: Error: Email already exists
+ [LOGGER] 2024-12-31 11:11:36.798 AM error : controller/userController/addUser: [
+  {
+    "code": "too_small",
+    "minimum": 8,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password must be at least 8 characters long",
+    "path": [
+      "password"
+    ]
+  },
+  {
+    "validation": "regex",
+    "code": "invalid_string",
+    "message": "Password must contain at least one uppercase letter",
+    "path": [
+      "password"
+    ]
+  },
+  {
+    "validation": "regex",
+    "code": "invalid_string",
+    "message": "Password must contain at least one number",
+    "path": [
+      "password"
+    ]
+  },
+  {
+    "validation": "regex",
+    "code": "invalid_string",
+    "message": "Password must contain at least one special character",
+    "path": [
+      "password"
+    ]
+  }
+]

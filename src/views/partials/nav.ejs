@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" href="/">Perpus</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarScroll"
+      aria-controls="navbarScroll"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul
+        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+        style="--bs-scroll-height: 100px"
+      >
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Master
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/users">User</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="dropdown d-flex">
+        <div class="btn-group">
+          <button
+            type="button"
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="/public/img/img_avatar.png"
+              width="32"
+              height="32"
+              alt="dropdown image"
+              class="rounded img-responsive"
+            />
+            User
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a href="#" class="dropdown-item">Profile</a></li>
+            <li><a href="/logout" class="dropdown-item">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

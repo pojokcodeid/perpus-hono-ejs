@@ -1,0 +1,40 @@
+echo '🏗️👷 Preparing your project: Styling, linting, type-checking, and building before committing...'
+
+# Check Prettier standards
+bun run check-format ||
+(
+  echo '🚨 Styling Check Failed 🚨
+    Your code formatting does not meet the standard.
+    Please run "bun run format" to fix it, add the changes, and try committing again.';
+  false;
+)
+
+# Check ESLint Standards
+bun run check-lint ||
+(
+  echo '🚨 Linting Check Failed 🚨
+    Your code contains linting errors.
+    Please review the issues above, fix them, add the changes, and try committing again.';
+  false; 
+)
+
+# Check tsconfig standards
+bun run check-types ||
+(
+  echo '🚨 Type Checking Failed 🚨
+    There are issues with your TypeScript types.
+    Please review the errors above, fix them, add the changes, and try committing again.';
+  false;
+)
+
+# build projeck
+bun run build ||
+(
+  echo '🚨 Build Failed 🚨
+    The project failed to build. 
+    Please review the build errors above, fix them, and try committing again.';
+  false;
+)
+
+# If everything passes... Now we can commit
+echo '✅ All checks passed! Proceeding with commit. ✅'
