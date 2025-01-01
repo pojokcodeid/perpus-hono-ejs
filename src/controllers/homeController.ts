@@ -11,11 +11,26 @@ export const getHome = async (c: Context) => {
     dta = out.data;
     type = out.type;
   }
-  const html = await setTemplate("home", {
+  const html = await setTemplate(c, "home", {
     message: msg,
     data: dta,
     type,
     title: "World from pojok code",
   });
+  return c.html(html);
+};
+
+export const notAllowed = async (c: Context) => {
+  const html = await setTemplate(
+    c,
+    "notallowed",
+    {
+      message: "Access Denied",
+      data: {},
+      type: "danger",
+      title: "Not Allowed",
+    },
+    false
+  );
   return c.html(html);
 };

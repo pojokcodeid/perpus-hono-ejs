@@ -1,0 +1,90 @@
+<div class="container mt-2 p-4 rounded">
+  <% if(message) { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%- message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <%}
+  let titleBook = data?.title || "";
+  let publisher=data?.publisher || "";
+  let yearPublished=data?.yearPublished || 0;
+  let author=data?.author || "";
+  let isbn=data?.isbn || "";
+  let qty=data?.qty || 0;
+  let image=data?.image || "";
+  let categoryId=data?.categoryId || 0;
+  %>
+  <div class="row bg-body-tertiary pt-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/books">Books</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Add</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="row mt-3 p-4 bg-body-tertiary">
+    <form action="/books" method="post" enctype="multipart/form-data">
+      <div class="mb-3 row">
+        <label for="title" class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="title" name="title" value="<%= titleBook %>" />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="publisher" class="col-sm-2 col-form-label">Publisher</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="publisher" name="publisher" value="<%= publisher %>" />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="yearPublished" class="col-sm-2 col-form-label">Year Published</label>
+        <div class="col-sm-3">
+          <input type="number" class="form-control" id="yearPublished" name="yearPublished" 
+          value="<%= yearPublished %>" />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="author" class="col-sm-2 col-form-label">Author</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="author" name="author" value="<%= author %>" />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="isbn" class="col-sm-2 col-form-label">Isbn</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" id="isbn" name="isbn" value="<%= isbn %>" />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="qty" class="col-sm-2 col-form-label">Quantity</label>
+        <div class="col-sm-3">
+          <input type="number" class="form-control" id="qty" name="qty" value="<%= qty %>" />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="image" class="col-sm-2 col-form-label">Image</label>
+        <div class="col-sm-6">
+          <input class="form-control" type="file" id="image" name="image" value="<%= image %>">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="catoryId" class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-6">
+          <select name="categoryId" class="form-select form-select">
+            <% 
+            categorys.forEach((category) => { %>
+              <option <% if(category.id == categoryId) { %>selected<% } %> value="<%= category.id %>"><%= category.categoryName %></option>
+            <% }) %>
+          </select>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

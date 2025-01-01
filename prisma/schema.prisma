@@ -40,10 +40,11 @@ model Book {
   author        String
   isbn          String
   qty           Int
-  catoryId      Int
+  image         String
+  categoryId    Int
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
-  category      Category       @relation(fields: [catoryId], references: [id])
+  category      Category       @relation(fields: [categoryId], references: [id])
   BorrowDetail  BorrowDetail[]
   ReturnDetail  ReturnDetail[]
 }

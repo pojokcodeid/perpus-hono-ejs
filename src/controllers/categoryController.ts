@@ -10,8 +10,12 @@ import { setTemplate } from "../utils/template";
 import { logger } from "../utils/logger";
 import { getFlash, setFlash } from "../utils/flash";
 import { validateCategory } from "../validations/categoryValidation";
+import { acessFile } from "../utils/acessValidation";
 
 export const getCategories = async (c: Context) => {
+  if (!(await acessFile(c, "ADMIN"))) {
+    return c.redirect("/notallowed");
+  }
   try {
     let msg = undefined;
     let type = "danger";
@@ -21,7 +25,7 @@ export const getCategories = async (c: Context) => {
       type = out.type;
     }
     const categories = await getAllCategories();
-    const html = await setTemplate("category/list", {
+    const html = await setTemplate(c, "category/list", {
       title: "Category List",
       message: msg,
       type,
@@ -36,13 +40,16 @@ export const getCategories = async (c: Context) => {
 };
 
 export const openAddCategoryForm = async (c: Context) => {
+  if (!(await acessFile(c, "ADMIN"))) {
+    return c.redirect("/notallowed");
+  }
   let msg, dta;
   if (getFlash(c)) {
     const out = JSON.parse((getFlash(c)?.toString() || "") as string);
     msg = out.message;
     dta = out.data;
   }
-  const html = await setTemplate("category/add", {
+  const html = await setTemplate(c, "category/add", {
     title: "Category Add",
     message: msg,
     data: dta,
@@ -51,6 +58,9 @@ export const openAddCategoryForm = async (c: Context) => {
 };
 
 export const addCategory = async (c: Context) => {
+  if (!(await acessFile(c, "ADMIN"))) {
+    return c.redirect("/notallowed");
+  }
   let data = {};
   try {
     data = await c.req.parseBody();
@@ -79,6 +89,9 @@ export const addCategory = async (c: Context) => {
 };
 
 export const openEditCategoryForm = async (c: Context) => {
+  if (!(await acessFile(c, "ADMIN"))) {
+    return c.redirect("/notallowed");
+  }
   try {
     let msg;
     const { id } = c.req.param();
@@ -88,7 +101,7 @@ export const openEditCategoryForm = async (c: Context) => {
       msg = out.message;
       dta = { ...out.data, id };
     }
-    const html = await setTemplate("category/edit", {
+    const html = await setTemplate(c, "category/edit", {
       title: "Category Edit",
       message: msg,
       data: dta,
@@ -104,6 +117,9 @@ export const openEditCategoryForm = async (c: Context) => {
 };
 
 export const editCategory = async (c: Context) => {
+  if (!(await acessFile(c, "ADMIN"))) {
+    return c.redirect("/notallowed");
+  }
   let data;
   const { id } = c.req.param();
   try {
@@ -134,6 +150,9 @@ export const editCategory = async (c: Context) => {
 };
 
 export const removeCategory = async (c: Context) => {
+  if (!(await acessFile(c, "ADMIN"))) {
+    return c.redirect("/notallowed");
+  }
   try {
     const { id } = c.req.param();
     const success = await deleteCategory(Number(id));

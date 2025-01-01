@@ -1,297 +1,892 @@
- [LOGGER] 2024-12-31 09:56:34.351 AM error : controller/userController/loginUser: [
-  {
-    "validation": "email",
-    "code": "invalid_string",
-    "message": "Invalid email format",
-    "path": [
-      "email"
-    ]
-  },
-  {
-    "code": "too_small",
-    "minimum": 1,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Password is required",
-    "path": [
-      "password"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 10:00:10.720 AM error : controller/userController/loginUser: [
-  {
-    "validation": "email",
-    "code": "invalid_string",
-    "message": "Invalid email format",
-    "path": [
-      "email"
-    ]
-  },
-  {
-    "code": "too_small",
-    "minimum": 1,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Password is required",
-    "path": [
-      "password"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 10:01:46.979 AM error : controller/userController/loginUser: [
-  {
-    "validation": "email",
-    "code": "invalid_string",
-    "message": "Invalid email format",
-    "path": [
-      "email"
-    ]
-  },
-  {
-    "code": "too_small",
-    "minimum": 1,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Password is required",
-    "path": [
-      "password"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 10:01:53.860 AM error : controller/userController/loginUser: [
-  {
-    "validation": "email",
-    "code": "invalid_string",
-    "message": "Invalid email format",
-    "path": [
-      "email"
-    ]
-  },
-  {
-    "code": "too_small",
-    "minimum": 1,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Password is required",
-    "path": [
-      "password"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 10:02:30.626 AM error : controller/userController/loginUser: [
-  {
-    "validation": "email",
-    "code": "invalid_string",
-    "message": "Invalid email format",
-    "path": [
-      "email"
-    ]
-  },
-  {
-    "code": "too_small",
-    "minimum": 1,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Password is required",
-    "path": [
-      "password"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 10:02:56.874 AM error : controller/userController/loginUser: [
-  {
-    "validation": "email",
-    "code": "invalid_string",
-    "message": "Invalid email format",
-    "path": [
-      "email"
-    ]
-  },
-  {
-    "code": "too_small",
-    "minimum": 1,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Password is required",
-    "path": [
-      "password"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 10:04:36.044 AM error : controller/userController/loginUser: [
-  {
-    "validation": "email",
-    "code": "invalid_string",
-    "message": "Invalid email format",
-    "path": [
-      "email"
-    ]
-  },
-  {
-    "code": "too_small",
-    "minimum": 1,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Password is required",
-    "path": [
-      "password"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 10:04:52.927 AM error : controller/userController/loginUser: [
-  {
-    "validation": "email",
-    "code": "invalid_string",
-    "message": "Invalid email format",
-    "path": [
-      "email"
-    ]
-  },
-  {
-    "code": "too_small",
-    "minimum": 1,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Password is required",
-    "path": [
-      "password"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 10:05:15.330 AM error : controller/userController/loginUser: [
-  {
-    "code": "too_small",
-    "minimum": 1,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Password is required",
-    "path": [
-      "password"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 10:06:40.637 AM error : controller/userController/loginUser: [
-  {
-    "code": "too_small",
-    "minimum": 1,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Password is required",
-    "path": [
-      "password"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 11:02:04.516 AM error : controller/userController/addUser: PrismaClientKnownRequestError: 
-Invalid `prisma.user.create()` invocation in
-C:\Users\Asep\Downloads\peminjamanbuku\src\models\userModel.ts:36:28
+ [LOGGER] 2024-12-31 09:35:13.442 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:35:13.516 PM error : controller/bookController/openEditBook: PrismaClientValidationError: 
+Invalid `prisma.book.findUnique()` invocation in
+C:\Users\Asep\Downloads\peminjamanbuku\src\models\bookModel.ts:22:34
 
-  33   role: Role = "USER"
-  34 ): Promise<User> => {
-  35   const hashedPassword = await bcrypt.hash(password, 10);
-→ 36   return await prisma.user.create(
-Unique constraint failed on the constraint: `User_email_key`
- [LOGGER] 2024-12-31 11:05:25.137 AM error : controller/userController/addUser: Error: Email already exists
- [LOGGER] 2024-12-31 11:11:36.798 AM error : controller/userController/addUser: [
-  {
-    "code": "too_small",
-    "minimum": 8,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Password must be at least 8 characters long",
-    "path": [
-      "password"
-    ]
-  },
-  {
-    "validation": "regex",
-    "code": "invalid_string",
-    "message": "Password must contain at least one uppercase letter",
-    "path": [
-      "password"
-    ]
-  },
-  {
-    "validation": "regex",
-    "code": "invalid_string",
-    "message": "Password must contain at least one number",
-    "path": [
-      "password"
-    ]
-  },
-  {
-    "validation": "regex",
-    "code": "invalid_string",
-    "message": "Password must contain at least one special character",
-    "path": [
-      "password"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 01:02:45.211 PM error : controller/categoryController/addCategory: [
-  {
-    "code": "too_small",
-    "minimum": 1,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Category name is required",
-    "path": [
-      "categoryName"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 01:02:50.078 PM error : controller/categoryController/addCategory: [
-  {
-    "code": "too_small",
-    "minimum": 1,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "Category name is required",
-    "path": [
-      "categoryName"
-    ]
-  }
-]
- [LOGGER] 2024-12-31 01:03:17.657 PM error : controller/categoryController/addCategory: PrismaClientValidationError: 
-Invalid `prisma.category.create()` invocation in
-C:\Users\Asep\Downloads\peminjamanbuku\src\models\categoryModel.ts:16:32
-
-  13 };
-  14 
-  15 export const createCategory = async (name: string): Promise<Category> => {
-→ 16   return await prisma.category.create({
-         data: {
-       +   categoryName: String
+  19 };
+  20 
+  21 export const getBookById = async (id: number): Promise<Book | null> => {
+→ 22   const book = await prisma.book.findUnique({
+         where: {
+       +   id: Int
          }
        })
 
-Argument `categoryName` is missing.
- [LOGGER] 2024-12-31 01:06:19.786 PM error : controller/categoryController/addCategory: PrismaClientValidationError: 
-Invalid `prisma.category.create()` invocation in
-C:\Users\Asep\Downloads\peminjamanbuku\src\models\categoryModel.ts:16:32
+Argument `id` is missing.
+ [LOGGER] 2024-12-31 09:37:01.092 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:37:01.212 PM error : controller/bookController/openEditBook: PrismaClientValidationError: 
+Invalid `prisma.book.findUnique()` invocation in
+C:\Users\Asep\Downloads\peminjamanbuku\src\models\bookModel.ts:22:34
 
-  13 };
-  14 
-  15 export const createCategory = async (name: string): Promise<Category> => {
-→ 16   return await prisma.category.create({
-         data: {
-       +   categoryName: String
+  19 };
+  20 
+  21 export const getBookById = async (id: number): Promise<Book | null> => {
+→ 22   const book = await prisma.book.findUnique({
+         where: {
+       +   id: Int
          }
        })
 
-Argument `categoryName` is missing.
- [LOGGER] 2024-12-31 01:36:37.062 PM error : controller/categoryController/openEditCategoryForm: ENOENT: No such file or directory
- [LOGGER] 2024-12-31 01:37:15.869 PM error : controller/categoryController/openEditCategoryForm: ENOENT: No such file or directory
+Argument `id` is missing.
+ [LOGGER] 2024-12-31 09:39:10.485 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:39:10.562 PM error : controller/bookController/openEditBook: PrismaClientValidationError: 
+Invalid `prisma.book.findUnique()` invocation in
+C:\Users\Asep\Downloads\peminjamanbuku\src\models\bookModel.ts:22:34
+
+  19 };
+  20 
+  21 export const getBookById = async (id: number): Promise<Book | null> => {
+→ 22   const book = await prisma.book.findUnique({
+         where: {
+       +   id: Int
+         }
+       })
+
+Argument `id` is missing.
+ [LOGGER] 2024-12-31 09:40:08.572 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:40:08.636 PM error : controller/bookController/openEditBook: PrismaClientValidationError: 
+Invalid `prisma.book.findUnique()` invocation in
+C:\Users\Asep\Downloads\peminjamanbuku\src\models\bookModel.ts:22:34
+
+  19 };
+  20 
+  21 export const getBookById = async (id: number): Promise<Book | null> => {
+→ 22   const book = await prisma.book.findUnique({
+         where: {
+       +   id: Int
+         }
+       })
+
+Argument `id` is missing.
+ [LOGGER] 2024-12-31 09:41:23.290 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:41:38.823 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:41:56.075 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:45:39.726 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:46:00.293 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:48:01.453 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:49:02.011 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:49:39.892 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 09:50:37.417 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:51:08.531 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 09:52:32.635 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:54:26.863 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 09:56:38.283 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 09:57:10.971 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 09:57:49.484 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 09:58:18.798 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:01:30.359 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:02:55.847 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:05:44.454 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:08:50.455 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:09:24.677 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:09:49.441 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:11:40.678 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:15:13.253 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:16:17.565 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:17:34.610 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:19:28.298 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:19:48.250 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:24:11.064 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:25:27.817 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:25:37.174 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:26:23.986 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:26:30.876 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:28:11.316 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:28:11.389 PM error : controller/bookController/openEditBook: PrismaClientValidationError: 
+Invalid `prisma.book.findUnique()` invocation in
+C:\Users\Asep\Downloads\peminjamanbuku\src\models\bookModel.ts:22:34
+
+  19 };
+  20 
+  21 export const getBookById = async (id: number): Promise<Book | null> => {
+→ 22   const book = await prisma.book.findUnique({
+         where: {
+       +   id: Int
+         }
+       })
+
+Argument `id` is missing.
+ [LOGGER] 2024-12-31 10:28:32.897 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:28:32.961 PM error : controller/bookController/openEditBook: PrismaClientValidationError: 
+Invalid `prisma.book.findUnique()` invocation in
+C:\Users\Asep\Downloads\peminjamanbuku\src\models\bookModel.ts:22:34
+
+  19 };
+  20 
+  21 export const getBookById = async (id: number): Promise<Book | null> => {
+→ 22   const book = await prisma.book.findUnique({
+         where: {
+       +   id: Int
+         }
+       })
+
+Argument `id` is missing.
+ [LOGGER] 2024-12-31 10:39:37.509 PM error : controller/bookController/createBook: EPERM: Operation not permitted
+ [LOGGER] 2024-12-31 10:39:37.589 PM error : controller/bookController/openEditBook: PrismaClientValidationError: 
+Invalid `prisma.book.findUnique()` invocation in
+C:\Users\Asep\Downloads\peminjamanbuku\src\models\bookModel.ts:22:34
+
+  19 };
+  20 
+  21 export const getBookById = async (id: number): Promise<Book | null> => {
+→ 22   const book = await prisma.book.findUnique({
+         where: {
+       +   id: Int
+         }
+       })
+
+Argument `id` is missing.
+ [LOGGER] 2024-12-31 10:40:31.922 PM error : controller/bookController/createBook: EPERM: Operation not permitted
+ [LOGGER] 2024-12-31 10:40:31.984 PM error : controller/bookController/openEditBook: PrismaClientValidationError: 
+Invalid `prisma.book.findUnique()` invocation in
+C:\Users\Asep\Downloads\peminjamanbuku\src\models\bookModel.ts:22:34
+
+  19 };
+  20 
+  21 export const getBookById = async (id: number): Promise<Book | null> => {
+→ 22   const book = await prisma.book.findUnique({
+         where: {
+       +   id: Int
+         }
+       })
+
+Argument `id` is missing.
+ [LOGGER] 2024-12-31 10:42:33.264 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 10:44:07.866 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:44:08.002 PM error : controller/bookController/openEditBook: PrismaClientValidationError: 
+Invalid `prisma.book.findUnique()` invocation in
+C:\Users\Asep\Downloads\peminjamanbuku\src\models\bookModel.ts:22:34
+
+  19 };
+  20 
+  21 export const getBookById = async (id: number): Promise<Book | null> => {
+→ 22   const book = await prisma.book.findUnique({
+         where: {
+       +   id: Int
+         }
+       })
+
+Argument `id` is missing.
+ [LOGGER] 2024-12-31 10:49:43.754 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 10:50:19.915 PM error : controller/bookController/createBook: TypeError: file.arrayBuffer is not a function. (In 'file.arrayBuffer()', 'file.arrayBuffer' is undefined)
+ [LOGGER] 2024-12-31 11:08:20.594 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 11:08:49.188 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 11:10:15.403 PM error : controller/bookController/createBook: SyntaxError: JSON Parse error: Unexpected identifier "object"
+ [LOGGER] 2024-12-31 11:11:04.583 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 11:11:19.535 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 11:12:35.207 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 11:12:56.229 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 11:14:21.888 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 11:14:41.952 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]
+ [LOGGER] 2024-12-31 11:28:09.670 PM error : controller/bookController/createBook: TypeError: expected blob, string or buffer
+ [LOGGER] 2024-12-31 11:29:24.466 PM error : controller/bookController/createBook: [
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book title is required",
+    "path": [
+      "title"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book publisher is required",
+    "path": [
+      "publisher"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book author is required",
+    "path": [
+      "author"
+    ]
+  },
+  {
+    "code": "too_small",
+    "minimum": 1,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Book ISBN is required",
+    "path": [
+      "isbn"
+    ]
+  }
+]

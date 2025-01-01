@@ -1,0 +1,71 @@
+<div class="container mt-2 p-4 rounded">
+  <div class="row bg-body-tertiary pt-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Books</li>
+      </ol>
+    </nav>
+  </div>
+  <% if(message) { %>
+    <div class="alert alert-<%- type %> alert-dismissible fade show" role="alert">
+      <%- message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <%}%>
+  <div class="row mt-3 p-4 bg-body-tertiary">
+    <div>
+      <a href="/book-add" class="btn btn-primary btn-sm">Add New</a>
+    </div>
+    <div class="row mt-3">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Publisher</th>
+            <th scope="col">Year Published</th>
+            <th scope="col">Author</th>
+            <th scope="col">QTY</th>
+            <th scope="col">Image</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if(data.length > 0){ 
+            let no=0;
+            data.map((item) => {
+              no++;
+          %>
+          <tr>
+            <th valign="middle" scope="row"><%= no %></th>
+            <td valign="middle"><%= item.title %></td>
+            <td valign="middle"><%= item.publisher %></td>
+            <td valign="middle"><%= item.yearPublished %></td>
+            <td valign="middle"><%= item.author %></td>
+            <td valign="middle"><%= item.qty %></td>
+            <td valign="middle">
+              <img
+              src="<%= item.image %>"
+              height="75"
+              alt=""
+              class="rounded img-responsive"
+            />
+              </td>
+            <td valign="middle" class="text-end">
+              <a href="/books/<%= item.id %>" class="btn btn-primary btn-sm">Edit</a>
+              <a href=javascript: onclick="confirmDelete('/books-del/<%= item.id %>')" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+          </tr>
+          <%
+            })
+          }else{%>
+            <tr>
+              <td colspan="8" class="text-center">No Data</td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

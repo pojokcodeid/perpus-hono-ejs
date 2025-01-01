@@ -75,7 +75,7 @@ export const verifyUser = async (
 ): Promise<User | null> => {
   const user = await getUserByEmail(email);
   if (user && (await bcrypt.compare(password, user.password))) {
-    return user;
+    return { ...user, password: "********" } as User;
   }
   return null;
 };

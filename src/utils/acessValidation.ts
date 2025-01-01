@@ -3,7 +3,7 @@ import { getCookie, setCookie } from "hono/cookie";
 
 // set cookie if login sucess
 export const setLoginCookie = (c: Context, obj: object) => {
-  setCookie(c, "user", JSON.stringify({ obj }), {
+  setCookie(c, "user", JSON.stringify({ ...obj }), {
     path: "/",
     httpOnly: true, // Keamanan tambahan
     maxAge: 86400, // Flash message berlaku selama 1 hari
@@ -36,4 +36,15 @@ export const validateUserLogin = async (
     await next();
   }
   return c.redirect("/login");
+};
+
+export const acessFile = async (c: Context, role: string = "USER") => {
+  const user = getLoginCookie(c);
+  if (user) {
+    const userObjeck = JSON.parse(user?.toString() || "");
+    if (userObjeck.role != role) {
+      return false;
+    }
+  }
+  return true;
 };

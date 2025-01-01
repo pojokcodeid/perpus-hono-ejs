@@ -16,11 +16,14 @@ import {
 } from "../validations/userValidation";
 import { setTemplate } from "../utils/template";
 import { getFlash, setFlash } from "../utils/flash";
-import { setLoginCookie } from "../utils/acessValidation";
+import { acessFile, setLoginCookie } from "../utils/acessValidation";
 import { deleteCookie } from "hono/cookie";
 
 // Mendapatkan semua pengguna
 export const getUsers = async (c: Context) => {
+  if (!(await acessFile(c, "ADMIN"))) {
+    return c.redirect("/notallowed");
+  }
   try {
     let msg = undefined;
     let type = "danger";
@@ -30,7 +33,7 @@ export const getUsers = async (c: Context) => {
       type = out.type;
     }
     const users = await getAllUsers();
-    const html = await setTemplate("user/list", {
+    const html = await setTemplate(c, "user/list", {
       title: "User List",
       message: msg,
       type,
@@ -45,13 +48,16 @@ export const getUsers = async (c: Context) => {
 };
 
 export const openAddUserForm = async (c: Context) => {
+  if (!(await acessFile(c, "ADMIN"))) {
+    return c.redirect("/notallowed");
+  }
   let msg, dta;
   if (getFlash(c)) {
     const out = JSON.parse((getFlash(c)?.toString() || "") as string);
     msg = out.message;
     dta = out.data;
   }
-  const html = await setTemplate("user/add", {
+  const html = await setTemplate(c, "user/add", {
     title: "User Add",
     message: msg,
     data: dta,
@@ -61,6 +67,9 @@ export const openAddUserForm = async (c: Context) => {
 
 // Mendapatkan pengguna berdasarkan ID
 export const getUser = async (c: Context) => {
+  if (!(await acessFile(c, "ADMIN"))) {
+    return c.redirect("/notallowed");
+  }
   try {
     const { id } = c.req.param();
     let user = await getUserById(Number(id));
@@ -71,7 +80,7 @@ export const getUser = async (c: Context) => {
         msg = out.message;
         user = { ...out.data, id: user.id };
       }
-      const html = await setTemplate("user/edit", {
+      const html = await setTemplate(c, "user/edit", {
         title: "User Edit",
         message: msg,
         data: user,
@@ -95,6 +104,9 @@ export const getUser = async (c: Context) => {
 
 // Menambahkan pengguna baru
 export const addUser = async (c: Context) => {
+  if (!(await acessFile(c, "ADMIN"))) {
+    return c.redirect("/notallowed");
+  }
   let data = {};
   try {
     data = await c.req.parseBody();
@@ -129,6 +141,9 @@ export const addUser = async (c: Context) => {
 
 // Memperbarui pengguna
 export const editUser = async (c: Context) => {
+  if (!(await acessFile(c, "ADMIN"))) {
+    return c.redirect("/notallowed");
+  }
   let data;
   const { id } = c.req.param();
   data = await c.req.parseBody();
@@ -176,6 +191,9 @@ export const editUser = async (c: Context) => {
 
 // Menghapus pengguna
 export const removeUser = async (c: Context) => {
+  if (!(await acessFile(c, "ADMIN"))) {
+    return c.redirect("/notallowed");
+  }
   try {
     const { id } = c.req.param();
     const success = await deleteUser(Number(id));
@@ -202,6 +220,7 @@ export const openLogin = async (c: Context) => {
     dta = out.data;
   }
   const html = await setTemplate(
+    c,
     "user/login",
     {
       title: "Login",

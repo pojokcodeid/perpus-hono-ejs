@@ -1,14 +1,24 @@
 import { readFile } from "fs/promises";
 import ejs from "ejs";
+import { getLoginCookie } from "./acessValidation";
+import { Context } from "hono";
 
 export const setTemplate = async (
+  c: Context,
   template: string,
   data: object,
   isMenu = true
 ) => {
   const header = "./src/views/partials/header.ejs";
   const fotter = "./src/views/partials/fotter.ejs";
-  const nav = "./src/views/partials/nav.ejs";
+  let nav = "./src/views/partials/nav.ejs";
+  const user = getLoginCookie(c);
+  if (user) {
+    const userObjeck = JSON.parse(user?.toString() || "");
+    if (userObjeck && userObjeck.role == "ADMIN") {
+      nav = "./src/views/partials/nav_admin.ejs";
+    }
+  }
   const templatePath = "./src/views/" + template + ".ejs";
   const headerOut = await readFile(header, "utf-8");
   const fotterOut = await readFile(fotter, "utf-8");
